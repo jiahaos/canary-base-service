@@ -1,0 +1,63 @@
+<included>
+
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<file>${logs.dir}/output.log</file>-->
+        <file>output.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>output.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%-5level] %date{yyyy-MM-dd HH:mm:ss} %logger \(%file:%line\) - %message%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="fluent" class="ch.qos.logback.more.appenders.DataFluentAppender">
+        <tag>${logback.log.elasticsearch}</tag>
+        <label>${server.display-name}</label>
+        <remoteHost>127.0.0.1</remoteHost>
+        <port>24224</port>
+    </appender>
+
+    <appender name="behaviourElasticSearch" class="com.pcy.biz.common.behaviour.BehaviourFluentAppender">
+        <tag>${logback.behaviour.elasticsearch}</tag>
+        <label>${server.display-name}</label>
+        <remoteHost>127.0.0.1</remoteHost>
+        <port>24224</port>
+    </appender>
+
+    <appender name="behaviourMongo" class="com.pcy.biz.common.behaviour.BehaviourFluentAppender">
+        <tag>${logback.behaviour.mongo}</tag>
+        <label>${server.display-name}</label>
+        <remoteHost>127.0.0.1</remoteHost>
+        <port>24224</port>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="file"/>
+        <appender-ref ref="fluent"/>-->
+    </root>
+
+    <logger name="com.``1`121paicheya">
+        <level value="INFO"/>
+    </logger>
+    <logger name="org.hibernate.SQL">
+        <level value="INFO"/>
+    </logger>
+    <logger name="java.sql.Statement">
+        <level value="INFO"/>
+    </logger>
+    <logger name="java.sql.PreparedStatement">
+        <level value="INFO"/>
+    </logger>
+    <logger name="org.springframework.jdbc">
+        <level value="INFO"/>
+    </logger>
+    <logger name="org.springframework.security">
+        <level value="INFO"/>
+    </logger>
+</included>
