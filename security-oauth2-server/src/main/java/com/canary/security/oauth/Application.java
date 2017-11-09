@@ -10,9 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
 
-/**
- * Created by hsk on 2016/1/13.
- */
 @SpringBootApplication
 @ComponentScan({
         "com.canary",

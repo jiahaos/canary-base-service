@@ -33,7 +33,16 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * @author jiahao
+ * @Package com.canary.security.oauth.server
+ * @Description: 配置一个server授权服务
+ * @date 2017/11/7 16:39
+ *
+ * spring security为web应用提供了一个WebSecurityConfigurerAdapter适配器，
+ * 应用里spring security相关的配置可以通过继承这个类来编写；
+ * 具体是提供了上边三个顶级配置项构建器的构建重载回调方法；
+ */
 @SpringBootApplication
 @RestController
 @EnableOAuth2Client
@@ -50,6 +59,12 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
         return map;
     }
 
+    /**
+     * httpSecurity.authorizeRequests()返回一个ExpressionInterceptUrlRegistry对象，这个对象就一个作用，注册intercept url规则权限匹配信息，
+     * 通过设置URL Matcher，antMatchers，mvcMatchers，regexMatchers或者直接设置一个一个或者多个RequestMatcher对象;
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // @formatter:off

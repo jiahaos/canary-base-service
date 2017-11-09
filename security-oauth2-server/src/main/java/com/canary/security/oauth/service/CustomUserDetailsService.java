@@ -26,6 +26,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author jiahao
+ * @Package com.canary.security.oauth.oauth
+ * @Description: 实现spring security 的UserDetailsService， security自动会自动调用其属性进行相应校验
+ * @date 2017/11/7 16:40
+ */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
@@ -39,12 +45,9 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (account == null) {
             throw new UsernameNotFoundException(String.format("User %s does not exist!", username));
         }
-        int userId = account.getId();
         int shopId = 0;
-
         boolean userCredentials = false;
         boolean shopCredentials = false;
-
         return new AccountUserDetails(account, shopId, userCredentials, shopCredentials);
     }
 
