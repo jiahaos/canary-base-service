@@ -22,9 +22,9 @@ security:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mysql://rm-uf61501896t6034l1o.mysql.rds.aliyuncs.com:3306/canary?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    url: jdbc:mysql://39.106.73.29:3306/canary?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=true
     username: root
-    password: JIAhao123
+    password: MyNewPass4!
     driver-class-name: com.mysql.jdbc.Driver
     max-active: 5
   jpa:

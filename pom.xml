@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
+        <version>1.5.9.RELEASE</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -17,10 +17,18 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>security-oauth2-server</module>
+        <module>canary-test</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Edgware.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>com.canary.framework</groupId>
                 <artifactId>jaf-core</artifactId>
@@ -112,9 +120,9 @@
     <!--SCM(Source Control Management)标签允许你配置你的代码库，供Maven web站点和其它插件使用。-->
     <scm>
         <!--指向项目的可浏览SCM库（例如ViewVC或者Fisheye）的URL。-->
-        <url>https://code.aliyun.com/jh-canary/canary-base-service.git</url>
+        <url>https://github.com/jiahaos/canary-base-service.git</url>
         <!--SCM的URL,该URL描述了版本库和如何连接到版本库。欲知详情，请看SCMs提供的URL格式和列表。该连接只读。-->
-        <connection>scm:git:https://code.aliyun.com/jh-canary/canary-base-service.git</connection>
+        <connection>scm:git:https://github.com/jiahaos/canary-base-service.git</connection>
         <!--当前代码的标签，在开发阶段默认为HEAD-->
         <tag>HEAD</tag>
     </scm>
