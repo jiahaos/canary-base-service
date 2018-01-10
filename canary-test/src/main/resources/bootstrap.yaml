@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: canary-test
   cloud:
       config:
         uri: http://localhost:8781
@@ -12,12 +10,3 @@ spring:
           max-interval: 10000
           multiplier: 2
           max-attempts: 10
-#服务端口
-server:
-  port: 30002
-
-#注册到eureka中心，获取到配置服务
-eureka:
-  client:
-    service-url:
-      defaultZone: http://user:123@localhost:8761/eureka/

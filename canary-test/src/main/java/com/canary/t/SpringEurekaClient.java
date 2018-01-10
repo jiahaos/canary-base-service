@@ -23,7 +23,7 @@ public class SpringEurekaClient {
     @GetMapping("getService")
     public String getService() {
         List<ServiceInstance> list = discoveryClient.getInstances("STORES");
-        System.out.println(discoveryClient.getLocalServiceInstance());
+        System.out.println(discoveryClient.getServices());
         System.out.println("discoveryClient.getServices().size() = " + discoveryClient.getServices().size());
 
         for( String s :  discoveryClient.getServices()){
